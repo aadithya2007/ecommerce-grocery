@@ -151,4 +151,10 @@
   .contact-page .hero-text p {
     font-size: 17px;
   }
+  .error {
+  display: block;
+  color: red;
+  font-size: 0.85rem;
+  margin: 4px 0 10px;
+}
 }

@@ -7,7 +7,7 @@ const navItems = [
   { label: "Offers", to: "/offers" },
   { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
-  { label: "FAQ", to: "/faq" },
+  
 ];
 
 function Navbar() {
