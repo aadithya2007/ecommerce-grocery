@@ -1,0 +1,140 @@
+.about-page .split-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  padding: 76px 80px;
+  background: var(--sand);
+}
+
+.about-page .hero-text {
+  flex: 1 1 440px;
+}
+
+.about-page .hero-text h1 {
+  color: var(--green);
+  font-size: 56px;
+  line-height: 1.08;
+  margin: 0 0 14px;
+}
+
+.about-page .hero-text p {
+  max-width: 620px;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.about-page .hero-image {
+  flex: 0 1 420px;
+  text-align: center;
+}
+
+.about-page .hero-image img,
+.about-page .story-image img {
+  max-width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+}
+
+.about-page .story,
+.about-page .mission {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  padding: 56px 80px;
+}
+
+.about-page .story-text,
+.about-page .story-image {
+  flex: 1 1 420px;
+}
+
+.about-page .story-text h2,
+.about-page .section h2 {
+  color: var(--green);
+  font-size: 38px;
+  margin: 0 0 28px;
+}
+
+.about-page .story-text p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.about-page .section {
+  padding: 56px 80px;
+  text-align: center;
+}
+
+.about-page .info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
+}
+
+.about-page .mission .info-card {
+  max-width: 440px;
+}
+
+.about-page .offer-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 40px;
+  padding: 24px 40px;
+  border-radius: 8px;
+  background: var(--red);
+  color: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.about-page .offer-strip h2 {
+  margin: 0;
+}
+
+@media (max-width: 980px) {
+  .about-page .split-hero,
+  .about-page .story,
+  .about-page .mission {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .about-page .split-hero,
+  .about-page .story,
+  .about-page .mission,
+  .about-page .section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .about-page .hero-text h1 {
+    font-size: 42px;
+  }
+
+  .about-page .offer-strip {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 560px) {
+  .about-page .split-hero {
+    padding-top: 48px;
+  }
+
+  .about-page .hero-text h1 {
+    font-size: 34px;
+  }
+
+  .about-page .hero-text p {
+    font-size: 17px;
+  }
+
+  .about-page .offer-strip {
+    margin: 24px;
+    padding: 22px;
+  }
+}
