@@ -28,14 +28,9 @@
 /* CATEGORIES GRID */
 
 .categories-grid {
-  display: grid;
-
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(220px, 1fr)
-  );
-
-  gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 
   padding: 60px 80px;
 }

@@ -68,9 +68,11 @@ function HomePage() {
         <h2>Popular Products</h2>
         <div className="product-container">
           {products.slice(0, 4).map((product) => (
-            <ProductCard key={product.name} product={product} simple />
+            <ProductCard
+              key={product.name}
+              product={product}
+            />
           ))}
-          {products.length === 0 && <p>No products added yet.</p>}
         </div>
       </section>
 

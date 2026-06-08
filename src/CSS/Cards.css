@@ -2,18 +2,18 @@
     background: #dacfbd;
     border-radius: 15px;
     width: 180px;
-    min-height: 320px;
+    height: 280px; /* reduced from 320px */
 
-    padding: 15px;
+    padding: 12px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
 
     text-align: center;
 
     box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
-
     transition: all 0.2s ease;
 }
 
@@ -22,23 +22,22 @@
 }
 
 .product-card img {
-    width: 100px;
-    height: 100px;
+    width: 85px;
+    height: 85px;
     object-fit: contain;
-
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .product-card h3 {
-    font-size: 18px;
     color: #02332d;
     margin: 5px 0;
+    font-size: 18px;
 }
 
 .product-card p {
     color: #7f1100;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 18px;
     margin: 5px 0 10px;
 }
 
@@ -51,28 +50,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-
-    margin-bottom: 12px;
+    gap: 8px;
+    margin-bottom: 10px;
 }
 
 .qty-btn {
-    width: 32px;
-    height: 32px;
-
+    width: 28px;
+    height: 28px;
     border: none;
-    border-radius: 8px;
-
+    border-radius: 6px;
     background: #02332d;
     color: white;
-
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .qty-display {
-    min-width: 25px;
-    font-size: 16px;
+    min-width: 20px;
+    font-size: 14px;
     font-weight: bold;
     color: #02332d;
 }
@@ -80,14 +75,12 @@
 .add-to-cart-btn,
 .remove-cart-btn {
     width: 100%;
-    padding: 10px;
-
+    padding: 8px;
     border: none;
     border-radius: 8px;
-
+    font-weight: 600;
     cursor: pointer;
     font-size: 14px;
-    font-weight: 600;
 }
 
 .add-to-cart-btn {
