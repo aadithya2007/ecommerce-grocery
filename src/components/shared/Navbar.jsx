@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import { useAuth } from "../../context/AuthContext";
 import { useState } from "react";
@@ -26,6 +26,8 @@ function Navbar() {
   const { cart } = useCart();
   const { user, isAdmin, logout } = useAuth();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const navigate = useNavigate();
+  const [search, setSearch] = useState("");
 
   const handleLogout = () => {
     logout();
@@ -56,6 +58,14 @@ function Navbar() {
         <input
           type="search"
           placeholder="Search Products..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              const q = search.trim();
+              navigate(`/shop${q ? `?search=${encodeURIComponent(q)}` : ""}`);
+            }
+          }}
         />
 
         <div className="user-menu">

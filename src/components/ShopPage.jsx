@@ -1,6 +1,6 @@
 import ProductCard from "./cards/ProductCard";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { apiRequest } from "../api";
 import "../CSS/ShopPage.css";
 
@@ -11,9 +11,14 @@ function ShopPage() {
 
   useEffect(() => {
     async function loadProducts() {
-      const data = await apiRequest(
-        categoryId ? `/products?category=${categoryId}` : "/products"
-      );
+      const params = [];
+      if (categoryId) params.push(`category=${categoryId}`);
+      const searchTerm = new URLSearchParams(location.search).get("search");
+      if (searchTerm) params.push(`search=${encodeURIComponent(searchTerm)}`);
+
+      const path = "/products" + (params.length ? `?${params.join("&")}` : "");
+
+      const data = await apiRequest(path);
       setProducts(data);
       setCategoryName(data[0]?.category?.name || "");
     }
@@ -22,7 +27,7 @@ function ShopPage() {
       setProducts([]);
       setCategoryName("");
     });
-  }, [categoryId]);
+  }, [categoryId, location.search]);
 
   return (
     <main className="page shop-page">
