@@ -6,6 +6,7 @@ import "../CSS/ShopPage.css";
 
 function ShopPage() {
   const { categoryId } = useParams();
+  const location = useLocation();
   const [products, setProducts] = useState([]);
   const [categoryName, setCategoryName] = useState("");
 
