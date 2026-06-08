@@ -7,7 +7,6 @@ import {
   FaUserCircle,
   FaShoppingCart,
   FaUserCog,
-  FaUserPlus,
 } from "react-icons/fa";
 
 import { MdLogin } from "react-icons/md";
@@ -35,7 +34,6 @@ function Navbar() {
 
   return (
     <header className="site-header">
-
       <NavLink className="logo" to="/">
         VegiMart
       </NavLink>
@@ -55,14 +53,12 @@ function Navbar() {
       </nav>
 
       <div className="nav-actions">
-
         <input
           type="search"
           placeholder="Search Products..."
         />
 
         <div className="user-menu">
-
           <button
             className="user-icon"
             onClick={() =>
@@ -74,7 +70,6 @@ function Navbar() {
 
           {isDropdownOpen && (
             <div className="dropdown-menu">
-
               <NavLink
                 to="/cart"
                 className="dropdown-item"
@@ -106,42 +101,30 @@ function Navbar() {
               <hr className="dropdown-divider" />
 
               {user ? (
-                <button className="dropdown-item" type="button" onClick={handleLogout}>
+                <button
+                  className="dropdown-item"
+                  type="button"
+                  onClick={handleLogout}
+                >
                   <span>
                     <MdLogin /> Logout
                   </span>
                 </button>
               ) : (
-                <>
-                  <NavLink
-                    to="/login"
-                    className="dropdown-item"
-                    onClick={() => setIsDropdownOpen(false)}
-                  >
-                    <span>
-                      <MdLogin /> Login
-                    </span>
-                  </NavLink>
-
-                  <NavLink
-                    to="/register"
-                    className="dropdown-item"
-                    onClick={() => setIsDropdownOpen(false)}
-                  >
-                    <span>
-                      <FaUserPlus /> Register
-                    </span>
-                  </NavLink>
-                </>
+                <NavLink
+                  to="/login"
+                  className="dropdown-item"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  <span>
+                    <MdLogin /> Login
+                  </span>
+                </NavLink>
               )}
-
             </div>
           )}
-
         </div>
-
       </div>
-
     </header>
   );
 }
