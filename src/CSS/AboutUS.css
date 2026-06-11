@@ -94,6 +94,43 @@
   margin: 0;
 }
 
+.about-page .team-section {
+  padding-top: 24px;
+}
+
+.about-page .team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 18px;
+}
+
+.about-page .team-card {
+  background: var(--sand);
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.about-page .team-card img {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.about-page .team-card h3 {
+  margin: 6px 0;
+  color: var(--green);
+}
+
+.about-page .team-card p {
+  font-size: 14px;
+  color: rgba(0,0,0,0.7);
+}
+
 @media (max-width: 980px) {
   .about-page .split-hero,
   .about-page .story,

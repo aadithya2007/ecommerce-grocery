@@ -4,6 +4,10 @@ import InfoCard from "./cards/InfoCard";
 import { apiRequest } from "../api";
 import aboutHeroImage from "../assets/page-images/About.png";
 import aboutStoryImage from "../assets/page-images/about-story.svg";
+import team1 from "../Images/fruits.png";
+import team2 from "../Images/vegetables.png";
+import team3 from "../Images/dairy.png";
+import team4 from "../Images/snack.png";
 import "../CSS/AboutUS.css";
 
 const whyUs = [
@@ -102,6 +106,35 @@ function AboutUs() {
           title="Our Vision"
           text="To become the most trusted online grocery destination for every family."
         />
+      </section>
+
+      <section className="section centered team-section">
+        <h2>Meet the Team</h2>
+        <div className="team-grid">
+          <article className="team-card">
+            <img src={team1} alt="Team member" />
+            <h3>Asha Patel</h3>
+            <p>Head of Operations — ensuring fresh produce every day.</p>
+          </article>
+
+          <article className="team-card">
+            <img src={team2} alt="Team member" />
+            <h3>Rohan Mehta</h3>
+            <p>Logistics Lead — fast and reliable deliveries.</p>
+          </article>
+
+          <article className="team-card">
+            <img src={team3} alt="Team member" />
+            <h3>Meera Singh</h3>
+            <p>Quality Head — sourcing from trusted farms.</p>
+          </article>
+
+          <article className="team-card">
+            <img src={team4} alt="Team member" />
+            <h3>Adil Khan</h3>
+            <p>Customer Experience — we listen and improve.</p>
+          </article>
+        </div>
       </section>
 
       <section className="section centered">

@@ -68,6 +68,15 @@ function Navbar() {
           }}
         />
 
+        <NavLink to="/cart" className="cart-link">
+          <button className="cart-icon" aria-label="Cart">
+            <FaShoppingCart />
+            {cart.length > 0 && (
+              <span className="cart-badge">{cart.length}</span>
+            )}
+          </button>
+        </NavLink>
+
         <div className="user-menu">
           <button
             className="user-icon"
@@ -80,22 +89,6 @@ function Navbar() {
 
           {isDropdownOpen && (
             <div className="dropdown-menu">
-              <NavLink
-                to="/cart"
-                className="dropdown-item"
-                onClick={() => setIsDropdownOpen(false)}
-              >
-                <span>
-                  <FaShoppingCart /> Cart
-                </span>
-
-                {cart.length > 0 && (
-                  <span className="cart-badge">
-                    {cart.length}
-                  </span>
-                )}
-              </NavLink>
-
               {isAdmin && (
                 <NavLink
                   to="/admin"

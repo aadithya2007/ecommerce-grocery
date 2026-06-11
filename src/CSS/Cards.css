@@ -92,3 +92,26 @@
     background: #bf9861;
     color: white;
 }
+
+/* Info card used in About and other pages */
+.info-card {
+    background: transparent;
+    border-radius: 10px;
+    padding: 8px;
+    text-align: center;
+}
+
+.info-card img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.info-card h3 {
+    color: #02332d;
+    margin: 6px 0;
+}

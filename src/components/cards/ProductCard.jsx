@@ -69,29 +69,31 @@ function ProductCard({ product, simple = false }) {
 
           <div className="product-actions">
 
-            <div className="quantity-selector">
+            {cartItem && (
+              <div className="quantity-selector">
 
-              <button
-                type="button"
-                className="qty-btn"
-                onClick={handleDecrease}
-              >
-                −
-              </button>
+                <button
+                  type="button"
+                  className="qty-btn"
+                  onClick={handleDecrease}
+                >
+                  −
+                </button>
 
-              <span className="qty-display">
-                {displayQuantity}
-              </span>
+                <span className="qty-display">
+                  {displayQuantity}
+                </span>
 
-              <button
-                type="button"
-                className="qty-btn"
-                onClick={handleIncrease}
-              >
-                +
-              </button>
+                <button
+                  type="button"
+                  className="qty-btn"
+                  onClick={handleIncrease}
+                >
+                  +
+                </button>
 
-            </div>
+              </div>
+            )}
 
             {!cartItem ? (
               <button

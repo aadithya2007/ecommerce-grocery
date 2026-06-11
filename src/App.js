@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 
 import Layout from "./components/Layout";
+import ScrollToTop from "./components/ScrollToTop";
 import AboutUs from "./components/AboutUS";
 import CategoriesPage from "./components/CategoriesPage";
 import ContactPage from "./components/ContactPage";
@@ -31,7 +32,12 @@ function App() {
     <AuthProvider>
       <CartProvider>
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+
             <Route element={<Layout />}>
               <Route path="/" element={<HomePage />} />
 
@@ -58,12 +64,7 @@ function App() {
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/faq" element={<FaqPage />} />
 
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/register" element={<RegisterPage />} />
-              <Route
-                path="/forgot-password"
-                element={<ForgotPasswordPage />}
-              />
+              
 
               {/* Legal Pages */}
               <Route

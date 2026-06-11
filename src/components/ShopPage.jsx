@@ -19,9 +19,21 @@ function ShopPage() {
 
       const path = "/products" + (params.length ? `?${params.join("&")}` : "");
 
-      const data = await apiRequest(path);
+      // Fetch products and categories in parallel. Use categories to resolve the
+      // selected category name (more reliable than using the first product).
+      const [data, allCategories] = await Promise.all([
+        apiRequest(path),
+        apiRequest('/categories'),
+      ]);
+
       setProducts(data);
-      setCategoryName(data[0]?.category?.name || "");
+
+      if (categoryId) {
+        const cat = allCategories.find((c) => c.id === categoryId || c._id === categoryId);
+        setCategoryName(cat?.name || "");
+      } else {
+        setCategoryName("");
+      }
     }
 
     loadProducts().catch(() => {
